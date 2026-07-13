@@ -38,24 +38,35 @@ function calcular() {
     let plazo = parseInt(plazosStr);
     let tasaInteres = parseInt(tasaInteresStr);
 
-    let interesSimple=calcularInteresSimple(monto,tasaInteres,plazo);
+    let interesSimple = calcularInteresSimple(monto, tasaInteres, plazo);
 
-    let spnInteresPagar=document.getElementById("spnInteresPagar");
-    spnInteresPagar.textContent=interesSimple;
+    let spnInteresPagar = document.getElementById("spnInteresPagar");
+    spnInteresPagar.textContent = interesSimple;
 
     //total a pagar
 
-    let totalPago=calcularTotalPagar(monto,interesSimple);
+    let totalPago = calcularTotalPagar(monto, interesSimple);
 
-    let spnTotalPrestamo=document.getElementById("spnTotalPrestamo");
-    spnTotalPrestamo.textContent=totalPago;
+    let spnTotalPrestamo = document.getElementById("spnTotalPrestamo");
+    spnTotalPrestamo.textContent = totalPago;
 
     //cuota mensual
 
-    let cuotaMensual=calcularCuotaMensual(totalPago,plazo);
-    
-    spnCuotaMensual=document.getElementById("spnCuotaMensual");
-    spnCuotaMensual.textContent=cuotaMensual;
+    let cuotaMensual = calcularCuotaMensual(totalPago, plazo);
+
+    spnCuotaMensual = document.getElementById("spnCuotaMensual");
+    spnCuotaMensual.textContent = cuotaMensual;
+
+    //estado de credito
+
+    let estadoCredito = aprobarCredito(montoDisponible, cuotaMensual);
+    if (estadoCredito == true) {
+        let spnEstadoCredito = document.getElementById("spnEstadoCredito")
+        spnEstadoCredito.textContent = "CREDITO APROBADO";
+    } else {
+        let spnEstadoCredito = document.getElementById("spnEstadoCredito")
+        spnEstadoCredito.textContent = "CREDITO RECHAZADO";
+    }
 
 
 

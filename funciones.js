@@ -10,7 +10,7 @@ function calcularDisponible(ingresos,egresos){
 
 function calcularCapacidadPago(montoDisponible){
     montoDisponible = montoDisponible*0.50;
-    return montoDisponible;
+    return montoDisponible.toFixed(2);
 }
 
 function calcularInteresSimple(monto,tasa,plazoAnios){
@@ -28,4 +28,12 @@ function calcularCuotaMensual(total,plazoAnios){
     let cuotaMensual=plazoAnios*12;
     let cuota = total/cuotaMensual;
     return cuota.toFixed(2);
+}
+
+function aprobarCredito(capacidadPago,cuotaMensual){
+    if(capacidadPago>cuotaMensual){
+        return true;
+    } else{
+        return false;
+    }
 }
