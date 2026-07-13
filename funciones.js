@@ -17,3 +17,11 @@ function calcularInteresSimple(monto,tasa,plazoAnios){
     let interes= plazoAnios*monto*(tasa/100);
     return interes.toFixed(2);
 }
+
+function calcularTotalPagar(monto, interes){
+    interes = parseFloat(interes);
+
+    let totalPago = monto + interes + 100;
+
+    return totalPago.toFixed(2);
+}

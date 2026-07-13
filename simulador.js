@@ -43,6 +43,13 @@ function calcular() {
     let spnInteresPagar=document.getElementById("spnInteresPagar");
     spnInteresPagar.textContent=interesSimple;
 
+    //total a pagar
+
+    let totalPago=calcularTotalPagar(monto,interesSimple);
+
+    let spnTotalPrestamo=document.getElementById("spnTotalPrestamo");
+    spnTotalPrestamo.textContent=totalPago;
+
 
 
 }
