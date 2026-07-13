@@ -16,4 +16,10 @@ function calcular(){
     
     let spnDisponible=document.getElementById("spnDisponible");
     spnDisponible.textContent=disponible;
+
+    //mostrar la capacidad de pago
+    let montoDisponible = calcularCapacidadPago(disponible);
+    let spnCapacidadPago=document.getElementById("spnCapacidadPago");
+    spnCapacidadPago.textContent=montoDisponible;   
+
 }
