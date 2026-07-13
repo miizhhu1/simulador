@@ -59,8 +59,9 @@ function calcular() {
 
     //estado de credito
 
-    let estadoCredito = aprobarCredito(montoDisponible, cuotaMensual);
-    if (estadoCredito == true) {
+    let estadoCredito = aprobarCredito(parseFloat(montoDisponible),parseFloat(cuotaMensual));
+
+    if (estadoCredito === true) {
         let spnEstadoCredito = document.getElementById("spnEstadoCredito")
         spnEstadoCredito.textContent = "CREDITO APROBADO";
     } else {
