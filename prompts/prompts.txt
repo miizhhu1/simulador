@@ -1,0 +1,5 @@
+1.Actúa como un Diseñador grafico experto. Necesito que hagas mi página responsive (que se vea perfecta en celulares y tablets). Reglas importantes: Solo HTML y CSS: No uses librerías externas (como Bootstrap o Tailwind). No toques los IDs: No cambies ni borres ningún id de los componentes, los necesito para mi código. Buen gusto: Como diseñador, asegúrate de que los espacios y tamaños de letras se vean bien en pantallas pequeñas, darle un aspecto empresarial, elegir una entidad financiera real o ficticia y usar su logo y colores. Mantener separado el html y el css
+
+2.me ayudas con la creación de un logo
+
+3.lo siento un poco aburrido, me gustaria que fuera mas moderno

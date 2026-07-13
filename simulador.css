@@ -1,70 +1,514 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
+/* ================================
+   CONFIGURACIÓN GENERAL
+================================ */
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
 }
+
+body {
+    min-height: 100vh;
+    background: #eef4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #1f2937;
+}
+
+
+/* ================================
+   FONDO DECORATIVO
+================================ */
+
+.background {
+
+    position: fixed;
+    inset: 0;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(15,76,129,0.9),
+        rgba(30,136,229,0.7)
+    );
+
+    z-index: -1;
+
+}
+
+
+.background::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 50%;
+
+    top: -150px;
+    left: -120px;
+
+}
+
+
+.background::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(255,255,255,0.12);
+
+    border-radius: 50%;
+
+    bottom: -100px;
+    right: -100px;
+
+}
+
+
+/* ================================
+   CONTENEDOR PRINCIPAL
+================================ */
 
 .container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+    width: 100%;
+    max-width: 850px;
+
+    background: rgba(255,255,255,0.95);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.2);
+
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
+
+/* ================================
+   HEADER
+================================ */
+
+.header {
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:25px;
+
+    margin-bottom:35px;
+
 }
 
-h2 {
-    margin-top: 20px;
-    font-size: 18px;
+
+.logo {
+
+    width:100px;
+
+    height:100px;
+
+    object-fit:contain;
+
+    border-radius:20px;
+
+    padding:10px;
+
+    background:white;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.15);
+
 }
+
+
+.titulo h1 {
+
+    color:#0d47a1;
+
+    font-size:32px;
+
+    letter-spacing:1px;
+
+}
+
+
+.titulo p {
+
+    margin-top:8px;
+
+    color:#555;
+
+    font-size:17px;
+
+}
+
+
+/* ================================
+   TARJETAS
+================================ */
+
+
+.card {
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    margin-bottom:25px;
+
+    border-left:6px solid #1565c0;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
+
+}
+
+
+.card h2 {
+
+    color:#0d47a1;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+
+}
+
+
+/* ================================
+   CAMPOS
+================================ */
+
+.campo {
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:18px;
+
+}
+
 
 label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+    color:#374151;
+
 }
+
 
 input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:2px solid #dbeafe;
+
+    font-size:16px;
+
+    outline:none;
+
+    transition:.3s;
+
 }
 
-p {
-    margin-top: 10px;
+
+input:focus {
+
+    border-color:#1565c0;
+
+    box-shadow:
+    0 0 8px rgba(21,101,192,.3);
+
 }
 
-span {
-    font-weight: bold;
-    color: #2c3e50;
+
+/* ================================
+   DOS COLUMNAS
+================================ */
+
+.dos-columnas {
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+
 }
 
-.buttons {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
+
+/* ================================
+   BOTONES
+================================ */
+
+.botones {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    margin:25px 0;
+
 }
+
 
 button {
-    width: 48%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:30px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-button:hover {
-    background-color: #2980b9;
+
+#btnCalcularCredito {
+
+    background:#1565c0;
+
+    color:white;
+
+}
+
+
+#btnCalcularCredito:hover {
+
+    background:#0d47a1;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+#btnReiniciar {
+
+    background:#e53935;
+
+    color:white;
+
+}
+
+
+#btnReiniciar:hover {
+
+    background:#b71c1c;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ================================
+   RESULTADOS
+================================ */
+
+
+.resultado,
+.estado {
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    background:#f8fafc;
+
+    font-size:17px;
+
+}
+
+
+.resultado span:last-child {
+
+    font-weight:bold;
+
+    color:#1565c0;
+
+}
+
+
+
+.estado {
+
+    background:#e3f2fd;
+
+    border:2px solid #90caf9;
+
+}
+
+
+#spnEstadoCredito {
+
+    color:#1565c0;
+
+}
+
+
+
+/* ================================
+   RESPONSIVE TABLET
+================================ */
+
+
+@media(max-width:700px){
+
+
+.container {
+
+    padding:25px;
+
+}
+
+
+.header {
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+
+.titulo h1 {
+
+    font-size:26px;
+
+}
+
+
+.dos-columnas {
+
+    grid-template-columns:1fr;
+
+}
+
+
+.botones {
+
+    flex-direction:column;
+
+}
+
+
+button {
+
+    width:100%;
+
+}
+
+
+}
+
+
+/* ================================
+   RESPONSIVE CELULAR PEQUEÑO
+================================ */
+
+
+@media(max-width:420px){
+
+
+body {
+
+    padding:10px;
+
+}
+
+
+.container {
+
+    padding:18px;
+
+    border-radius:18px;
+
+}
+
+
+.logo {
+
+    width:80px;
+
+    height:80px;
+
+}
+
+
+.titulo h1 {
+
+    font-size:22px;
+
+}
+
+
+.card {
+
+    padding:18px;
+
+}
+
+
+.card h2 {
+
+    font-size:19px;
+
+}
+
+
+.resultado,
+.estado {
+
+    flex-direction:column;
+
+    gap:8px;
+
+    text-align:center;
+
+}
+
+
 }

@@ -1,48 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+
+    <title>Finanza Banco | Simulador de Crédito</title>
+
     <link rel="stylesheet" href="simulador.css">
+
     <script src="simulador.js"></script>
     <script src="funciones.js"></script>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Simulador de Crédito</h1>
+    <!-- Fondo decorativo -->
+    <div class="background"></div>
 
-        <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
+    <main class="container">
 
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
+        <!-- ===================== -->
+        <!-- ENCABEZADO -->
+        <!-- ===================== -->
 
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
+        <header class="header">
 
-        <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
+            <img src="logo.png" alt="Finanza Banco" class="logo">
 
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
+            <div class="titulo">
 
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
+                <h1>BANCO FINANZA </h1>
 
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito">ANALIZANDO...</span></p>
+                <p>Tu futuro financiero comienza aquí</p>
 
-        <div class="buttons">
-            <button id="btnCalcularCredito" onclick="calcular()">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
-        </div>
-    </div>
+            </div>
+
+        </header>
+
+
+        <!-- ===================== -->
+        <!-- DATOS FINANCIEROS -->
+        <!-- ===================== -->
+
+        <section class="card">
+
+            <h2>💰 Datos Financieros</h2>
+
+            <div class="campo">
+
+                <label for="txtIngresos">
+                    Ingresos Mensuales
+                </label>
+
+                <input
+                    type="text"
+                    id="txtIngresos"
+                    placeholder="$ 0.00">
+
+            </div>
+
+            <div class="campo">
+
+                <label for="txtEgresos">
+                    Gastos Mensuales
+                </label>
+
+                <input
+                    type="text"
+                    id="txtEgresos"
+                    placeholder="$ 0.00">
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================== -->
+        <!-- CRÉDITO -->
+        <!-- ===================== -->
+
+        <section class="card">
+
+            <h2>🏦 Solicitud de Crédito</h2>
+
+            <div class="campo">
+
+                <label for="txtMonto">
+
+                    Monto Solicitado
+
+                </label>
+
+                <input
+                    type="text"
+                    id="txtMonto"
+                    placeholder="$ 0.00">
+
+            </div>
+
+            <div class="dos-columnas">
+
+                <div class="campo">
+
+                    <label for="txtPlazo">
+
+                        Plazo (Años)
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="txtPlazo">
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="txtTasaInteres">
+
+                        Interés %
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="txtTasaInteres">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================== -->
+        <!-- BOTONES -->
+        <!-- ===================== -->
+
+        <section class="botones">
+
+            <button
+                id="btnCalcularCredito"
+                onclick="calcular()">
+
+                Calcular Crédito
+
+            </button>
+
+            <button id="btnReiniciar">
+
+                Reiniciar
+
+            </button>
+
+        </section>
+
+
+        <!-- ===================== -->
+        <!-- RESULTADOS -->
+        <!-- ===================== -->
+
+        <section class="card resultados">
+
+            <h2>📊 Resultado del Análisis</h2>
+
+            <div class="resultado">
+
+                <span>Disponible</span>
+
+                <span id="spnDisponible">$0.00</span>
+
+            </div>
+
+            <div class="resultado">
+
+                <span>Capacidad de Pago</span>
+
+                <span id="spnCapacidadPago">$0.00</span>
+
+            </div>
+
+            <div class="resultado">
+
+                <span>Interés</span>
+
+                <span id="spnInteresPagar">$0.00</span>
+
+            </div>
+
+            <div class="resultado">
+
+                <span>Total del Préstamo</span>
+
+                <span id="spnTotalPrestamo">$0.00</span>
+
+            </div>
+
+            <div class="resultado">
+
+                <span>Cuota Mensual</span>
+
+                <span id="spnCuotaMensual">$0.00</span>
+
+            </div>
+
+            <div class="estado">
+
+                <span>Estado del Crédito</span>
+
+                <strong id="spnEstadoCredito">
+
+                    ANALIZANDO...
+
+                </strong>
+
+            </div>
+
+        </section>
+
+    </main>
 
 </body>
+
 </html>
