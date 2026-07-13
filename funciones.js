@@ -20,8 +20,12 @@ function calcularInteresSimple(monto,tasa,plazoAnios){
 
 function calcularTotalPagar(monto, interes){
     interes = parseFloat(interes);
-
     let totalPago = monto + interes + 100;
-
     return totalPago.toFixed(2);
+}
+
+function calcularCuotaMensual(total,plazoAnios){
+    let cuotaMensual=plazoAnios*12;
+    let cuota = total/cuotaMensual;
+    return cuota.toFixed(2);
 }

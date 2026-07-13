@@ -50,6 +50,13 @@ function calcular() {
     let spnTotalPrestamo=document.getElementById("spnTotalPrestamo");
     spnTotalPrestamo.textContent=totalPago;
 
+    //cuota mensual
+
+    let cuotaMensual=calcularCuotaMensual(totalPago,plazo);
+    
+    spnCuotaMensual=document.getElementById("spnCuotaMensual");
+    spnCuotaMensual.textContent=cuotaMensual;
+
 
 
 }
