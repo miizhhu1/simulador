@@ -9,7 +9,7 @@ function calcularDisponible(ingresos,egresos){
 }
 
 function calcularCapacidadPago(montoDisponible){
-    montoDisponible = montoDisponible*0.50;
+    montoDisponible = montoDisponible*0.30;
     return montoDisponible.toFixed(2);
 }
 
@@ -31,6 +31,7 @@ function calcularCuotaMensual(total,plazoAnios){
 }
 
 function aprobarCredito(capacidadPago,cuotaMensual){
+    
     if(capacidadPago>cuotaMensual){
         return true;
     } else{
